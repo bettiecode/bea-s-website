@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portaloid</title>
+    <link rel="stylesheet" href="style4.css">
+    <link rel="icon" type="images/x-icon" href="icon.png">
+</head>
+<body>
+   
+    
+    <div id="gatewaysDiv">
+        <canvas id="gatewaysCanvas"
+        width="1024"
+        height="768"
+        >
+
+        </canvas>
+    </div>
+    <!--div>
+        controls:<br>
+        a: move left<br>
+        d: move right<br>
+        w: jump<br>
+        q: shoot blue portal<br>
+        e: shoot orange portal  
+    </div-->
+    firefox unrecommended(framerate cap), game uses audio, and is heavy on javascript. make sure your browser is compatible before playing.
+</body>
+
+<img hidden id="menuscreen" src="gateways/sprites/start_screen_new.png">
+
+<img hidden id="tutorial" src="gateways/sprites/tutorial.png"   >
+
+<img hidden id="question" src="gateways/sprites/question.png">
+
+<img hidden id="playerSprite(-1)(0)" src="gateways/sprites/teto-left0.png">
+<img hidden id="playerSprite(-1)(1)" src="gateways/sprites/teto-left1.png">
+<img hidden id="playerSprite(-1)(2)" src="gateways/sprites/teto-left2.png">
+<img hidden id="playerSprite(-1)(3)" src="gateways/sprites/teto-left1.png">
+
+<img hidden id="playerSprite(1)(0)" src="gateways/sprites/teto-right0.png">
+<img hidden id="playerSprite(1)(1)" src="gateways/sprites/teto-right1.png">
+<img hidden id="playerSprite(1)(2)" src="gateways/sprites/teto-right2.png">
+<img hidden id="playerSprite(1)(3)" src="gateways/sprites/teto-right1.png">
+
+<img hidden id="heart" src="gateways/sprites/heart.png">
+
+<img hidden id="breadSprite" src="gateways/sprites/bread.png">
+
+<img hidden id="plate-true" src="gateways/sprites/plate-true.png">
+<img hidden id="plate-false" src="gateways/sprites/plate-false.png">
+
+<img hidden id="ascenderTile" src="gateways/sprites/ascenderTile.png">
+
+<img hidden id="slimeTile-up" src="gateways/sprites/slimeTile-up.png">
+<img hidden id="slimeTile-down" src="gateways/sprites/slimeTile-down.png">
+
+<img hidden id="cube" src="gateways/sprites/testcube.png">
+
+<img hidden id="neru-0" src="gateways/sprites/neru-0.png">
+<img hidden id="neru-1" src="gateways/sprites/neru-1.png">
+<img hidden id="neru-2" src="gateways/sprites/neru-2.png">
+<img hidden id="neru-3" src="gateways/sprites/neru-3.png">
+<img hidden id="neru-4" src="gateways/sprites/neru-4.png">
+<img hidden id="neru-5" src="gateways/sprites/neru-5.png">
+<img hidden id="neru-off" src="gateways/sprites/neru-off.png">
+
+<img hidden id="nerubomb(0;-1)" src="gateways/sprites/nerubomb(0;-1).png">
+<img hidden id="nerubomb(1;0)" src="gateways/sprites/nerubomb(1;0).png">
+<img hidden id="nerubomb(0;1)" src="gateways/sprites/nerubomb(0;1).png">
+<img hidden id="nerubomb(-1;0)" src="gateways/sprites/nerubomb(-1;0).png">
+
+<img hidden id="laser" src="gateways/sprites/laser.png">
+
+<img hidden id="anvil" src="gateways/sprites/anvil.png">
+
+<img hidden id="exp0" src="gateways/sprites/exp0.png">
+<img hidden id="exp1" src="gateways/sprites/exp1.png">
+<img hidden id="exp2" src="gateways/sprites/exp2.png">
+<img hidden id="exp3" src="gateways/sprites/exp3.png">
+<img hidden id="exp4" src="gateways/sprites/exp4.png">
+
+<img hidden id="breadDoor" src="gateways/sprites/breadDoor.png">
+<img hidden id="breadDoorTransparent" src="gateways/sprites/breadDoorTransparent.png">
+
+<img hidden id="miku-left1" src="gateways/sprites/miku-left1.png">
+<img hidden id="miku-right1" src="gateways/sprites/miku-right1.png">
+<img hidden id="miku-right2" src="gateways/sprites/miku-right2.png">
+
+<img hidden id="endcred0" src="gateways/sprites/endcred0.png">
+<img hidden id="endcred1" src="gateways/sprites/endcred1.png">
+<img hidden id="endcred2" src="gateways/sprites/endcred2.png">
+
+<img hidden id="cake" src="gateways/sprites/cake.png">
+
+<img hidden id="endscreen" src="gateways/sprites/endscreen.png">
+
+<!--img hidden id="tile-a" src="tiles/tile-a.png"-->
+<img hidden id="tile-b" src="gateways/tiles/tile-b.png">
+<img hidden id="tile-p" src="gateways/tiles/tile-p.png">
+<img hidden id="tile-c" src="gateways/sprites/barrier.png">
+
+<img hidden id="blue(0;-1)" src="gateways/tiles/blue(0;-1).png">
+<img hidden id="blue(1;0)" src="gateways/tiles/blue(1;0).png">
+<img hidden id="blue(0;1)" src="gateways/tiles/blue(0;1).png">
+<img hidden id="blue(-1;0)" src="gateways/tiles/blue(-1;0).png">
+
+<img hidden id="orange(0;-1)" src="gateways/tiles/orange(0;-1).png">
+<img hidden id="orange(1;0)" src="gateways/tiles/orange(1;0).png">
+<img hidden id="orange(0;1)" src="gateways/tiles/orange(0;1).png">
+<img hidden id="orange(-1;0)" src="gateways/tiles/orange(-1;0).png">
+
+<audio id="snd-air" loop><source src="https://files.catbox.moe/bfh0y2.ogg"></audio>
+<audio id="snd-step"><source src="https://files.catbox.moe/uia91s.m4a"></audio>
+
+<audio id="snd-pickup"><source src="https://files.catbox.moe/bcznuk.ogg"></audio>
+
+<audio id="snd-portal"><source src="https://files.catbox.moe/l4tl5h.ogg"></audio>
+<audio id="snd-slime"><source src="https://files.catbox.moe/p5i7dr.ogg"></audio>
+<audio id="snd-switch"><source src="https://files.catbox.moe/qyiuq4.ogg"></audio>
+<audio id="snd-spark"><source src="https://files.catbox.moe/2u2byf.ogg"></audio>
+
+<audio id="snd-alarm"><source src="https://files.catbox.moe/7dg5dy.ogg"></audio>
+<audio id="snd-neru"><source src="https://files.catbox.moe/efn22b.ogg"></audio>
+<audio id="snd-creak"><source src="https://files.catbox.moe/wgrbux.ogg"></audio>
+<audio id="snd-snap"><source src="https://files.catbox.moe/dcoslt.ogg"></audio>
+<audio id="snd-exp"><source src="https://files.catbox.moe/7djl9z.ogg"></audio>
+<audio id="snd-fall"><source src="https://files.catbox.moe/jkutd1.ogg"></audio>
+<audio id="snd-nerudeath"><source src="https://files.catbox.moe/579hz2.ogg"></audio>
+
+<audio id="snd-bosstheme"><source src="https://files.catbox.moe/dn6isq.ogg"></audio>
+
+<script src="gateways/gateways.js"></script>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style4.css">
+    <title>loading...</title>
+    <link rel="icon" type="images/x-icon" href="icon.png">
+</head>
+<body>
+    <div id="pageContainer">
+        <header id="header">
+        </header>
+        <main>
+            <div id="main">
+                <div id="navBar" class="box">
+                    loading...
+                </div>
+                <div id="mainContent" class="box">
+                    <div class="box">
+                        <h4>2025/07/15: tile-based isometric renderer (javascript canvas)</h4>
+                        <img src="programming/tbir/example.png" style="width: 70%;"><br>
+                        <i>how it looks like</i><br>
+                        <b>includes: </b>
+                        <ul>
+                            <li>loading tilemap from innerHtml</li>
+                            <li>vertex rendering</li>
+                            <li>matrix rotation</li>
+                        </ul>
+                        <b>desc: </b><br>
+                        <ul>
+                            <li>first the tilemap data is read by iterating through each character</li>
+                            <li>the polygon data is saved into an array:<br>
+                                the nested indices and the tile width manipulate the position of the vertices, which are matrix transformed
+                            </li>
+                            <li>at the draw event, the it iterates through the <i>polygon</i> array and draw each one indivudaully</li>
+                        </ul>
+                        It sounds less complicated than it actually is, because it takes few, but large steps. Tiles can only be a single 
+                        color, because texturing would require hardware acceleration(or optimization, both is outside my capabilities). I did code sprites 
+                        and textures, but I didn't get them finished enough to make them worth adding to this demo. Maybe in later update.
+                        I had the flash game bloxorz in mind when i made this, but to recreate that, an actual 3d renderer would be needed.(or good animation skills)
+                        <br><br>
+                        <a href="https://github.com/bettiecode/tile-based-isometric-rendering-js-canvas">
+                            github repository
+                        </a>
+                    </div>
+                    
+                    <div class="box">
+                    <h4>2025/06/07: dijkstra (python)</h4>
+                    <table>
+                        <tbody><tr>
+                        <td>
+                            <img src="programming\dijkstra\djks1.png" style="width: 100%;">
+                        </td>
+                        <td>
+                            <img src="programming\dijkstra\djks2.png" style="width: 100%;">
+                        </td>
+                        <td>
+                            <img src="programming\dijkstra\djks3.png" style="width: 100%;">
+                        </td>
+                        <td>
+                            <img src="programming/dijkstra/djks4.png" style="width: 100%;">
+                        </td>
+                    </tr></tbody>
+                </table>    
+                <i>visualisations of some generations, where purple marks the shortest paths between the green points</i><div><br>
+                    <b>desc:</b>
+                    <ul>
+                        <li>
+                            Dijkstra's algorithm is used to find the path between two points on a graph, with the least sum of the numbers appended to its nodes.
+                        </li>
+                        <li>
+                            To model the graph, we make an array for the <i>points</i> and an array for the <i>nodes</i>. In <i>nodes</i> are 3-long arrays, where the values are: start, end, appended value(length).
+                        </li>
+                        <li>
+                            To find the shortest path, we find simply just go trough all of them. If there is no possible way to get from the start to the end, the algorithm will also know.
+                        </li>
+                        <li>
+                            This is done by creating a <i>paths</i> array, which will store all the routes, as we go trough every single possible one. Before the loop, it has one path inside, which has only the start point inside.
+                        </li>
+                        <li>
+                            We loop until all our found paths end at the end point, or it is proven that getting there is impossible. At the beginning, if a correct route hasn't been found yet, we check if there's a path, that can be continued without going somewhere it has already been. If this is the case, then it is impossible to get from the start to the end. 
+                        </li>
+                        <li>
+                            For every path inside the array, if the path has not finished yet, then we find all the possible points to continue towards. Then we append new arrays, storing the continuations to <i>paths</i>. After this, we remove the paths that have been continued, or circle around.
+                        </li>
+                        <li>
+                            Finally, we collect the sum of each path into and array, and find its minimum. Then get all paths with a sum equal to the minimum, when our output needs them.
+                        </li>
+                    </ul>
+                The code doesnt preform the very best, takes forever to search graphs with a pointcount over 15.<br>
+                <br><br>
+                <a href="https://github.com/bettiecode/dijkstra-python">
+                    github repository
+                </a>
+                
+                </div>
+            </div>
+        </main>
+        
+
+    </div>
+</body>
+<script src="index4.js"></script>
+<script>loadPage("programming")</script>
+</html>
